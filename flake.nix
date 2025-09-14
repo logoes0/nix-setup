@@ -26,6 +26,7 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
 
     username = "logoes0";
+    flakeDir = "/home/${username}/logo-nix-config";
   in {
     # Formatter for your nix files, available through 'nix fmt'
     # Other options beside 'alejandra' include 'nixpkgs-fmt'
@@ -37,7 +38,7 @@
       nixos = nixpkgs.lib.nixosSystem {
         modules = [./system];
         specialArgs = {
-          inherit username inputs outputs;
+          inherit username flakeDir inputs outputs;
         };
       };
     };
@@ -48,7 +49,7 @@
       "${username}@nixos" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {
-          inherit username inputs outputs;
+          inherit username flakeDir inputs outputs;
         };
         modules = [./home];
       };
