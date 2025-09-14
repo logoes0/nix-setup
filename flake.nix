@@ -24,6 +24,8 @@
     # This is a function that generates an attribute by calling a function you
     # pass to it, with each system as an argument
     forAllSystems = nixpkgs.lib.genAttrs systems;
+
+    username = "logoes0";
   in {
     # Formatter for your nix files, available through 'nix fmt'
     # Other options beside 'alejandra' include 'nixpkgs-fmt'
@@ -33,10 +35,22 @@
     # Available through 'nixos-rebuild --flake .  [or .#hostname]'
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
-        modules = [./configuration.nix];
+        modules = [./system];
         specialArgs = {
-          inherit inputs outputs;
+          inherit username inputs outputs;
         };
+      };
+    };
+
+    # Standalone home-manager configuration entrypoint
+    # Available through 'home-manager switch --flake .  [ or .#username@hostname]'
+    homeConfigurations = {
+      "${username}@nixos" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {
+          inherit username inputs outputs;
+        };
+        modules = [./home];
       };
     };
   };

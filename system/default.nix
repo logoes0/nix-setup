@@ -1,17 +1,16 @@
 {
   config,
   pkgs,
+  username,
   ...
 }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./system/nix
+    ./nix
   ];
 
   # Bootloader.
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
   boot.loader = {
     timeout = 5;
     efi = {
@@ -87,9 +86,9 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.logoes0 = {
+  users.users.${username} = {
     isNormalUser = true;
-    description = "logoes0";
+    description = "${username}";
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       kdePackages.kate
