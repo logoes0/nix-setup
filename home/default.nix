@@ -2,6 +2,7 @@
   config,
   pkgs,
   username,
+  flakeDir,
   ...
 }: {
   imports = [
@@ -21,6 +22,11 @@
 
   home.packages = with pkgs; [
   ];
+
+  programs.nh = {
+    enable = true;
+    flake = flakeDir;
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
