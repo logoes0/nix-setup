@@ -5,6 +5,7 @@
   ...
 }: {
   imports = [
+    ./nixpkgs.nix
   ];
 
   nix = let
