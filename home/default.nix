@@ -6,6 +6,7 @@
   ...
 }: {
   imports = [
+    ./git.nix
   ];
 
   nixpkgs = {
@@ -21,6 +22,7 @@
   home.homeDirectory = "/home/${username}";
 
   home.packages = with pkgs; [
+    discord
   ];
 
   programs.nh = {
