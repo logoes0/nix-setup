@@ -10,6 +10,10 @@
     ./nix
   ];
 
+  ## Hyprland
+  programs.hyprland.enable = true;
+  security.pam.services.hyprlock = {}; # can't unlock without this
+
   # Bootloader.
   boot.loader = {
     timeout = 5;
@@ -98,9 +102,6 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
