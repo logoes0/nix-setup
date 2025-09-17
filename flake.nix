@@ -11,12 +11,15 @@
     };
 
     stylix.url = "github:danth/stylix";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    nixos-hardware,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -45,7 +48,10 @@
     # Available through 'nixos-rebuild --flake .  [or .#hostname]'
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
-        modules = [./system];
+        modules = [
+          ./system
+          nixos-hardware.nixosModules.asus-fx506hm
+        ];
         specialArgs = {
           inherit username flakeDir inputs outputs;
         };
@@ -65,3 +71,4 @@
     };
   };
 }
+
