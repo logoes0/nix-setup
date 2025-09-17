@@ -95,11 +95,13 @@
     isNormalUser = true;
     description = "${username}";
     extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [
-      kdePackages.kate
-      #  thunderbird
-    ];
+    shell = pkgs.zsh;
   };
+
+  programs.zsh.enable = true; # required for setting shell above
+
+  # enable zsh autocompletion for system packages (systemd, etc)
+  environment.pathsToLink = ["/share/zsh"];
 
   # Install firefox.
   programs.firefox.enable = true;
