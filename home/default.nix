@@ -29,9 +29,14 @@
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
 
+  home.sessionVariables = {
+    NH_FLAKE = flakeDir;
+  };
+
   home.packages = with pkgs; [
     discord
   ];
+
 
   programs.nh = {
     enable = true;

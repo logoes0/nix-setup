@@ -28,7 +28,7 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
 
     username = "logoes0";
-    flakeDir = "/home/${username}/logo-nix-config";
+    flakeDir = "/home/${username}/nix-setup";
   in {
     # Your custom packages and modifications, exported as overlays
     overlays = import ./overlays {inherit inputs;};
