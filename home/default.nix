@@ -7,6 +7,7 @@
   ...
 }: {
   imports = [
+    ./cli
     ./stylix.nix
     ./fonts.nix
 
@@ -30,13 +31,12 @@
   home.homeDirectory = "/home/${username}";
 
   home.sessionVariables = {
-    NH_FLAKE = flakeDir;
+    # NH_FLAKE = flakeDir;
   };
 
   home.packages = with pkgs; [
     discord
   ];
-
 
   programs.nh = {
     enable = true;

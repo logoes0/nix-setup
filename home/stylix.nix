@@ -45,6 +45,9 @@ in {
       };
 
       mako.enable = true;
+
+      bat.enable = true;
+      fzf.enable = true;
     };
   };
 }
