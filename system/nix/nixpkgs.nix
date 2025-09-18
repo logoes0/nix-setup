@@ -9,6 +9,6 @@
       outputs.overlays.modifications
     ];
     config.allowUnfree = true;
-    config.permittedInsecurePackages = ["openssl-1.1.1w"];
+    config.permittedInsecurePackages = [];
   };
 }

@@ -12,7 +12,7 @@ in {
     settings = {
       mainBar = {
         layer = "top";
-        position = "bottom";
+        position = "top";
         height = 30;
         spacing = 4;
         reload_style_on_change = true;

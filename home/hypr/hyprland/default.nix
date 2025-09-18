@@ -63,7 +63,7 @@ in {
 
     # Qt theming
     # kdePackages.qt6ct
-    qt6ct-kde
+    # qt6ct-kde
     kdePackages.qtstyleplugin-kvantum
 
     # GTK theming
