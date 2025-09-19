@@ -14,7 +14,7 @@ in {
       "$mod" = "SUPER";
 
       "$terminal" = "kitty";
-      "$menu" = "anyrun";
+      "$menu" = "rofi";
 
       env = [
         "QT_AUTO_SCREEN_SCALE_FACTOR, 1"
@@ -46,7 +46,8 @@ in {
     ../../kitty.nix
     ../../mako.nix
     ../../waybar
-    ../../anyrun
+    # ../../anyrun
+    ../../rofi
     ../hypridle.nix
     ../hyprsunset.nix
     ../hyprlock.nix

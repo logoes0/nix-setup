@@ -39,7 +39,7 @@
       ]
       # Launch Apps
       ++ [
-        "$mod, R, exec, $menu"
+        "$mod, R, exec, $menu -show drun"
         "$mod, Return, exec, $terminal" # Terminal
         "$mod, L, exec, hyprlock" # Lock Screen
         "$mod + SHIFT, V, exec, kitty --class clipse 'clipse'" # clipboard manager
