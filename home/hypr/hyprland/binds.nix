@@ -44,7 +44,7 @@
         "$mod, L, exec, hyprlock" # Lock Screen
         "$mod + SHIFT, V, exec, kitty --class clipse 'clipse'" # clipboard manager
         # Screenshot
-        "$mod, O, exec, grimblast --freeze --notify save area"
+        "$mod, O, exec, grimblast --freeze --notify copysave area"
         "$mod + SHIFT, O, exec, grimblast --freeze --notify save screen"
       ];
 

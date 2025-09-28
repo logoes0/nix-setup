@@ -1,40 +1,8 @@
 configuration {
     show-icons: true;
-    display-drun: "";
+    display-drun: "Applications:";
     disable-history: false;
     click-to-exit: true;
 }
 
-* {
-    font: "Inter 12";
-}
-
-window {
-    location: north;
-    anchor: north;
-    width: 30%;
-    y-offset: 15px;
-    background-color: rgba(40, 42, 54, 0.9);
-    border: 2px;
-    border-color: rgba(68, 71, 90, 1);
-    border-radius: 10px;
-}
-
-listview {
-    columns: 1;
-    lines: 8;
-    cycle: false;
-    dynamic: true;
-    scrollbar: false;
-}
-
-element {
-    orientation: horizontal;
-    children: [ element-icon, element-text ];
-    spacing: 5px;
-    padding: 8px;
-}
-
-element-icon {
-    size: 24px;
-}
+@theme "nix-setup/home/rofi/themes"

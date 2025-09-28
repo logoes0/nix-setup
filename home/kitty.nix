@@ -1,5 +1,5 @@
 {lib, ...}: let
-  fontname = "family='JetBrainsMono Nerd Font' variable_name=JetBrainsMono";
+  fontname = "family='MonaspiceKr Nerd Font' variable_name=MonaspiceKr";
   features = "features='+ss02 +zero'";
 in {
   programs.kitty = {

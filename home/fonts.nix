@@ -3,5 +3,8 @@
 
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    nerd-fonts.monaspace
+    nerd-fonts.mononoki
+    nerd-fonts.dejavu-sans-mono
   ];
 }
