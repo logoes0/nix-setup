@@ -12,7 +12,7 @@
     ./fonts.nix
 
     ./git.nix
-
+    ./code
     ./hypr/hyprland
   ];
 
