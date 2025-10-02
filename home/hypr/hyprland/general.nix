@@ -2,7 +2,7 @@
   wayland.windowManager.hyprland.settings = {
     monitor = [
       "eDP-1, 1920x1080@144, 0x0, 1"
-      "HDMI-A-1, 2560x1440@144, 1920x0, 1"  # Example second monitor
+      "HDMI-A-1, 2560x1440@143.91, 1920x0, 1"  # Example second monitor
     ];
 
     general = {

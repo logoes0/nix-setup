@@ -89,10 +89,6 @@
     variant = "";
   };
 
-  # Gemini Suggestion
-  services.xserver.videoDrivers = ["nvidia"];
-  hardware.opengl.enable = true;
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
