@@ -2,30 +2,26 @@
   services.hypridle = {
     enable = true;
     settings = {
+      # The NixOS module groups top-level directives into the 'general' section.
       general = {
-        lock_cmd = "pidof hyprlock || hyprlock"; # Command to lock
-
-        # THIS IS THE KEY FIX: Lock, then wait 1 second before sleeping
+        lock_cmd = "pidof hyprlock || hyprlock";
         before_sleep_cmd = "pidof hyprlock || hyprlock && sleep 1";
-
-        after_sleep_cmd = "hyprctl dispatch dpms on";  # Wake up display
+        after_sleep_cmd = "hyprctl dispatch dpms on";
       };
 
+      # Each listener block from the .conf file becomes an attribute set in this list.
       listener = [
-        # Lock the screen after 5 minutes
         {
-          timeout = 300; # 5min
-          on-timeout = "pidof hyprlock || hyprlock"; # Use the lock_cmd directly
+          timeout = 10; # 5 minutes to lock
+          on-timeout = "pidof hyprlock || hyprlock";
         }
-        # Turn off the display after 5.5 minutes
         {
-          timeout = 330; # 5.5min
-          on-timeout = "hyprctl dispatch dpms off"; # Screen off
-          on-resume = "hyprctl dispatch dpms on";  # Screen on
+          timeout = 20; # 5.5 minutes to screen off
+          on-timeout = "hyprctl dispatch dpms off";
+          on-resume = "hyprctl dispatch dpms on";
         }
-        # Suspend the system after 7 minutes
         {
-          timeout = 420; # 7min
+          timeout = 30; # 7 minutes to suspend
           on-timeout = "systemctl suspend";
         }
       ];
