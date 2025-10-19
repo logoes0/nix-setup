@@ -1,9 +1,11 @@
 @define-color active #895770;
-@define-color bg #2a2827;
-@define-color fg #a5c2d1;
+@define-color bg #000000;
+@define-color fg #7ec4e6;
+
+/* bg #2a2827 #252626 fg #a5c2d1 #bdb77b */
 
 * {
-	font-family: "JetBrainsMono Nerd Font", "Noto Sans CJK JP";
+	font-family: "MonaspiceAr NF", "Noto Sans CJK JP";
 	font-size: 16px;
 	margin: 0.1px 0.5px 0.1px 0.5px;
 }
@@ -13,7 +15,7 @@
 }
 
 window#waybar {
-	background: alpha(@bg, 0.7);
+	background: alpha(@bg, 0.3);
 	min-height: 10px;
 }
 
@@ -34,11 +36,16 @@ window#waybar {
 #pfstats,
 #hwstats,
 #tray {
-	background: alpha(#000, 0.6);
+	background: alpha(#000, 0.5);
 	border-radius: 8px;
 	padding: 2px 8px 2px 8px;
 	margin: 0px 2px 0px 2px;
 	color: shade(@fg, 0.8);
+}
+
+#battery {
+	padding: 0 6px;
+	min-width: 50px;
 }
 
 #workspaces button,
@@ -70,7 +77,7 @@ window#waybar {
 
 #pulseaudio {
 	padding: 0px 15px 0px 15px;
-	color: #bd6f3e;
+/* 	color: #bd6f3e; */
 }
 
 #idle_inhibitor {
@@ -87,19 +94,19 @@ window#waybar {
 
 #clock {
 	padding: 0px 12px 0px 15px;
-	color: #d8a657;
+/* 	color: #d8a657; */
 }
 
 #network {
-	color: #7daea3;
+/* 	color: #7daea3; */
 }
 
 #memory {
-	color: #6578e6;
+/* 	color: #6578e6; */
 }
 
 #cpu {
-	color: #d3869b;
+/* 	color: #d3869b; */
 }
 
 #custom-hyprpicker {
@@ -110,5 +117,5 @@ window#waybar {
 }
 
 #privacy {
-	color: #3c9598;
+/* 	color: #3c9598; */
 }

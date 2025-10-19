@@ -14,7 +14,7 @@ in {
         layer = "top";
         position = "top";
         height = 30;
-        spacing = 4;
+        spacing = 6;
         reload_style_on_change = true;
 
         modules-left = [
