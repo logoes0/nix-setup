@@ -36,9 +36,10 @@
   };
 
   home.packages = with pkgs; [
-    vesktop
-    neovim
-    obsidian
+    vesktop # discord
+    neovim # tui editor
+    obsidian # notes maker
+    gearlever # Appimage runner
   ];
 
   programs.nh = {

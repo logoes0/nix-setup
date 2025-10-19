@@ -9,7 +9,7 @@
       gaps_in = 5;
       gaps_out = 10;
       border_size = 2;
-      allow_tearing = false;
+      allow_tearing = true;
       resize_on_border = false;
       layout = "dwindle";
       "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
@@ -45,6 +45,7 @@
       disable_hyprland_logo = true;
       disable_splash_rendering = true;
       force_default_wallpaper = 0;
+      vfr = false;
     };
   };
 }
