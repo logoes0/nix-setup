@@ -2,6 +2,7 @@
   inputs,
   pkgs,
   config,
+  lib,
   ...
 }: let
   theme = "horizon-dark";
@@ -10,10 +11,9 @@ in {
 
   stylix = {
     enable = true;
-    autoEnable = false;
+    autoEnable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
     # image = config.lib.stylix.pixel "base0A"; # use base16Scheme
-
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
@@ -26,8 +26,8 @@ in {
       serif = config.stylix.fonts.sansSerif;
 
       sizes = {
-        terminal = 18;
-        applications = 15;
+        terminal = 14;
+        applications = 11;
         desktop = 15;
         popups = 15;
       };
@@ -39,6 +39,11 @@ in {
     };
 
     targets = {
+      waybar.enable = false;
+      hyprland.enable = false;
+      hyprlock.enable = false;
+      gnome.enable = false;
+      firefox.enable = false;
       kitty = {
         enable = true;
         variant256Colors = true;
