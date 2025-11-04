@@ -57,6 +57,11 @@
     };
   };
 
+  boot.kernelModules               = [ "i2c-dev" ];
+  hardware.i2c.enable              = true;
+  services.udev.packages           = [ pkgs.openrgb ];
+  services.hardware.openrgb.enable = true;
+
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 

@@ -12,8 +12,10 @@ in {
   stylix = {
     enable = true;
     autoEnable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
+#     base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
     # image = config.lib.stylix.pixel "base0A"; # use base16Scheme
+    image = ./background.jpg;
+    polarity = "dark";
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
@@ -26,15 +28,15 @@ in {
       serif = config.stylix.fonts.sansSerif;
 
       sizes = {
-        terminal = 14;
+        terminal = 13;
         applications = 11;
-        desktop = 15;
-        popups = 15;
+        desktop = 11;
+        popups = 11;
       };
     };
     cursor = {
       package = pkgs.kdePackages.breeze;
-      name = "Breeze_Light";
+      name = "Breeze_Dark";
       size = 48;
     };
 
@@ -44,6 +46,7 @@ in {
       hyprlock.enable = false;
       gnome.enable = false;
       firefox.enable = false;
+      kde.enable = true;
       kitty = {
         enable = true;
         variant256Colors = true;
