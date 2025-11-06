@@ -13,6 +13,11 @@
     stylix.url = "github:danth/stylix";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    betterfox = {
+      url = "github:yokoffing/Betterfox";
+      flake = false;
+    };
   };
 
   outputs = {

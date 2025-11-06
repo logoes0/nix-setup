@@ -14,6 +14,9 @@
     ./git.nix
     ./code
     ./hypr/hyprland
+    ./discord
+    ./ytmusic
+    ./firefox
   ];
 
   nixpkgs = {
@@ -36,7 +39,6 @@
   };
 
   home.packages = with pkgs; [
-    vesktop # discord
     neovim # tui editor
     obsidian # notes maker
     gearlever # Appimage runner

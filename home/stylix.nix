@@ -47,6 +47,7 @@ in {
       gnome.enable = false;
       firefox.enable = false;
       kde.enable = true;
+      vscode.enable = false;
       kitty = {
         enable = true;
         variant256Colors = true;
