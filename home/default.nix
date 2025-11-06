@@ -17,6 +17,7 @@
     ./discord
     ./ytmusic
     ./firefox
+    ./desktop
   ];
 
   nixpkgs = {
